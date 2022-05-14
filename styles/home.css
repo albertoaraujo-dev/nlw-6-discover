@@ -1,0 +1,107 @@
+.content {
+  display: grid;
+  /*colunas do grid (total das % tem sempre que dar 100%)*/
+  /* duas colunas, podem ser usadas mais colunas */
+  grid-template-columns: 60% 40%;
+  /* mesma ideia das colunas, porém com as linhas (2 linha)
+  11.4rem (primeira linha)
+  fr = frações (1fr pega o espaço que sobrar)*/
+  grid-template-rows: 11.4rem 1fr;
+
+  grid-template-areas: 
+    /* 1 linha 1 coluna / 1 linha 2 coluna*/
+    'header header'
+    /*conteúdo da esquerda / conteúdo da direita*/
+    'left right';
+}
+
+header {
+  grid-area: header;
+}
+
+#bg {
+  grid-area: left;
+  /*top/contain ficar no topo e se encaixar no tamanho da div que está
+  usando a imagem completa*/
+  background: url('/assets/home-bg-img.svg') no-repeat top/contain;
+  background-position-x: -10rem;
+}
+
+main {
+  grid-area: right;
+
+  display: flex;
+  align-items: center;
+  margin-top: -12rem;
+}
+
+main .container {
+  /* sempre vai tentar usar o mínimo valor,
+  se o tamanho da tela ultrapassar 36.3rem, passa a ter 100%*/
+  width: min(36.3rem, 100%);
+}
+
+main h2 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--black);
+  font-weight: 700;
+  font-size: clamp(20px, 5vw, 2.8rem);
+  margin-bottom: 2.4rem;
+}
+
+input {
+  border: 0.2rem solid var(--grey-blue);
+  padding: 0 1.6rem;
+}
+
+input,
+button,
+.button {
+  width: 100%;
+  margin-bottom: 1.8rem;
+}
+
+/* Separator Line */
+.separator {
+  display: flex;
+  align-items: center;
+  margin: 4rem 0;
+}
+
+.separator div:nth-child(2) {
+  color: var(--grey-blue);
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  padding: 0 1.35rem;
+  line-height: 0;
+}
+
+.separator div:nth-child(1),
+.separator div:nth-child(3) {
+  background: var(--grey-blue);
+  width: 100%;
+  height: 1px;
+}
+
+/* create balls */
+.ball {
+  width: 21.2rem;
+  height: 21.2rem;
+  background: var(--blue);
+  clip-path: circle();
+  /*fica na frente e por cima de tudo*/
+  position: fixed;
+  opacity: 0.1;
+}
+
+.ball.top {
+  top: -46rem;
+  right: -35rem;
+  width: 63.3rem;
+  height: 63.3rem;
+}
+
+.ball.bottom {
+  right: 5.6rem;
+  bottom: -15rem;
+}
