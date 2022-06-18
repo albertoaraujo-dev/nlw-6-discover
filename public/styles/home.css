@@ -23,7 +23,7 @@ header {
   grid-area: left;
   /*top/contain ficar no topo e se encaixar no tamanho da div que está
   usando a imagem completa*/
-  background: url('/assets/home-bg-img.svg') no-repeat top/contain;
+  background: url('/images/home-bg-img.svg') no-repeat top/contain;
   background-position-x: -10rem;
 }
 
