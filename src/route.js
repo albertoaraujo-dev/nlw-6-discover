@@ -16,4 +16,4 @@ route.post('/question/:room/:question/:action', QuestionController.index);
 
 module.exports = route;
 
-// VIDEO 5 14min
+// VIDEO 5 46min
